@@ -14,6 +14,7 @@ jobs:
       - run:
           name: rspec
           command: bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
+    context: cs3000
   deploy:
     executor: heroku/default
     steps:
