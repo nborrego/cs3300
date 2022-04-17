@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
-
+  #before_action :authenticate_user!, only: [ :create , :new , :edit , :show , :update , :destroy ]
+  before_action :authenticate_user!, except: %i[index show]
   # GET /projects or /projects.json
   def index
     @projects = Project.all
@@ -21,8 +22,10 @@ class ProjectsController < ApplicationController
 
   # POST /projects or /projects.json
   def create
+    #before_action :authenticate_user!
+    #user_signed_in?
     @project = Project.new(project_params)
-
+    
     respond_to do |format|
       if @project.save
         format.html { redirect_to project_url(@project), notice: "Project was successfully created." }

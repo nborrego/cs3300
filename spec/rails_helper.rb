@@ -64,6 +64,11 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # Devise
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 end
 
 require 'simplecov'
@@ -72,3 +77,5 @@ SimpleCov.start 'rails' do
   add_filter '/db/'
   add_filter '/spec/' # for rspec
 end
+
+
