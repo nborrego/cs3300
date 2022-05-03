@@ -14,11 +14,21 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+          <p class="card-title">project.title</p>
+          <div class="card-body">
+            <p class="card-text">project.description</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="list-group">
+              <a href="https://radiant-sea-45660.herokuapp.com/projects/"project"" class="list-group-item list-group-item-action">Show</a>
+              <a href="https://radiant-sea-45660.herokuapp.com/projects/"project"/edit" class="list-group-item list-group-item-action"Edit</a>
+              <a data-confirm="Are you sure?" data-method="destroy" href="https://radiant-sea-45660.herokuapp.com/projects/"project"/destroy" class="list-group-item list-group-item-action">Destroy</a>
+            </div>
+              <small class="text-muted">9 mins</small>
+            </div>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>

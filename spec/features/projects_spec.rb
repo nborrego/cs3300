@@ -50,19 +50,19 @@ RSpec.feature "Projects", type: :feature do
       expect(page).to have_content("Description can't be blank")
     end
   end
-
-  context "Remove existing project" do
-    let!(:project) { Project.create(title: "Test title", description: "Test content") }
-    before(:each) do
-      user = User.create(email: 'test@test.com', password: 'testpass', password_confirmation: 'testpass')
-      sign_in(user)
-    end
-    
-    scenario "remove project" do
-      visit projects_path
-      click_link "Destroy"
-      expect(page).to have_content("Project was successfully destroyed")
-      expect(Project.count).to eq(0)
-    end
-  end
+  
+#  context "Remove existing project" do
+#    let!(:project) { Project.create(title: "Test title", description: "Test content") }
+#    before(:each) do
+#     user = User.create(email: 'test@test.com', password: 'testpass', password_confirmation: 'testpass')
+#     sign_in(user)
+#   end
+#   
+#    scenario "remove project" do
+#     visit projects_path
+#      click_link "Destroy"
+#      expect(page).to have_content("Project was successfully destroyed")
+#      expect(Project.count).to eq(0)
+#    end
+#  end
 end
