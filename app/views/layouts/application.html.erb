@@ -27,7 +27,7 @@
             <a class="nav-link" href="https://radiant-sea-45660.herokuapp.com/projects/new">New Project</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"><%= link_to "Log out", destroy_user_session_path, method: :delete %></a>
+            <a class="nav-link" href=<%= link_to "Log out", destroy_user_session_path, method: :delete %>>Log out</a>
           </li>
         <% else %>
           <li class="nav-item">
