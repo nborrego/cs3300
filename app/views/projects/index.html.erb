@@ -28,7 +28,7 @@
                             <li class="list-group-item"><%= link_to 'Show', project %></li>
                             <li class="list-group-item"><%= link_to 'Edit', edit_project_path(project) %></li>
                             <% if current_user %>
-                            <li class="list-group-item"><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                            <li class="list-group-item"><%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' } %></li>
                             <% end %>
                           </div>
                         </div>
