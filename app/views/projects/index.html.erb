@@ -14,20 +14,19 @@
       <tr>
         <div class="album py-5 bg-dark">
           <div class="container">
-            <div class="row">
+            <div class="col-sm">
               <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
-                <p class="card-title text-center"><%= project.title %></p>
-                <div class="card-body">
+                  <p class="card-title text-center"><%= project.title %></p>
+                  <div class="card-body">
                     <p class="card-text"><%= project.description %></p>
                     <div class="d-flex justify-content-between align-items-center">
-                    <div class="list-group list-group-horizontal">
-                      <li class="list-group-item"><%= link_to 'Show', project %></li>
+                      <div class="list-group list-group-horizontal">
+                        <li class="list-group-item"><%= link_to 'Show', project %></li>
                         <li class="list-group-item"><%= link_to 'Edit', edit_project_path(project) %></li>
                         <li class="list-group-item"><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                    </div>
+                      </div>
+                  </div>
                 </div>
               </div>
             </div>
