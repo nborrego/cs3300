@@ -9,13 +9,15 @@
     </tr>
   </thead>
 
+  
+    
+
   <tbody>
-    <% @projects.each do |project| %>
       <tr>
         <div class="album py-5 bg-dark">
-          <div class="container">
-            <div class="col-sm">
-              <div class="row">
+          <div class="container">            
+            <div class="row">
+              <% @projects.each do |project| %>
                 <div class="card mb-4 box-shadow">
                   <p class="card-title text-center"><%= project.title %></p>
                   <div class="card-body">
@@ -26,14 +28,14 @@
                         <li class="list-group-item"><%= link_to 'Edit', edit_project_path(project) %></li>
                         <li class="list-group-item"><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></li>
                       </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              <% end %>
+            </div> 
           </div>
         </div>
       </tr>
-    <% end %>
   </tbody>
 </table>
 
